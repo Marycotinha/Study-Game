@@ -8,6 +8,7 @@ const HomePage = lazy(() => import('@/features/home/HomePage'))
 const GradeSelectPage = lazy(() => import('@/features/catalog/GradeSelectPage'))
 const TopicListPage = lazy(() => import('@/features/catalog/TopicListPage'))
 const TopicDetailPage = lazy(() => import('@/features/catalog/TopicDetailPage'))
+const LearnPage = lazy(() => import('@/features/lesson/LearnPage'))
 
 function PageFallback() {
   return <div className="px-6 py-24 text-center text-text-muted">Carregando…</div>
@@ -23,6 +24,7 @@ export function AppRouter() {
             <Route index element={<GradeSelectPage />} />
             <Route path=":gradeId" element={<TopicListPage />} />
             <Route path=":gradeId/:topicId" element={<TopicDetailPage />} />
+            <Route path=":gradeId/:topicId/learn" element={<LearnPage />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Route>

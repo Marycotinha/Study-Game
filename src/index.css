@@ -60,3 +60,11 @@ body {
 #root {
   min-height: 100svh;
 }
+
+/* Foco visível padrão em fundo escuro. :where() mantém especificidade 0,
+   então componentes com foco próprio continuam prevalecendo. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
