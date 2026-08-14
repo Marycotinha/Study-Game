@@ -1,0 +1,65 @@
+/**
+ * STUDY GAME — Color tokens
+ * Roxo como identidade da marca; fundo escuro em camadas; uma cor de
+ * "accent" por matéria, trocada via [data-subject] no elemento raiz.
+ */
+:root {
+  /* Marca — roxo */
+  --brand-300: #c4b5fd;
+  --brand-400: #a78bfa;
+  --brand-500: #8b5cf6;
+  --brand-600: #7c3aed;
+  --brand-700: #6d28d9;
+
+  /* Fundo escuro em camadas (profundidade sem bordas duras) */
+  --bg-base: #0b0714;
+  --bg-surface: #150f24;
+  --bg-elevated: #1e1633;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  /* Texto */
+  --text-primary: #f8fafc;
+  --text-muted: #a79fc4;
+  --text-faint: #6f6789;
+
+  /* Matérias */
+  --math-500: #3b82f6;
+  --physics-500: #f97316;
+  --chem-500: #22c55e;
+
+  /* Recompensa e feedback */
+  --gold-500: #fbbf24;
+  --success-500: #34d399;
+  --attention-500: #fb923c;
+  --danger-500: #f87171;
+
+  /* Accent ativo — matéria atual; roxo é o padrão da marca */
+  --accent: var(--brand-500);
+  --accent-strong: var(--brand-600);
+
+  /* Forma */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Sombra e glow */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-elevated: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Tema por matéria — troca um atributo no elemento raiz e o app inteiro
+   se re-tematiza (glow, botões, barras de progresso, gradientes). */
+[data-subject='math'] {
+  --accent: var(--math-500);
+  --accent-strong: color-mix(in oklab, var(--math-500) 80%, black);
+}
+[data-subject='physics'] {
+  --accent: var(--physics-500);
+  --accent-strong: color-mix(in oklab, var(--physics-500) 80%, black);
+}
+[data-subject='chemistry'] {
+  --accent: var(--chem-500);
+  --accent-strong: color-mix(in oklab, var(--chem-500) 80%, black);
+}
